@@ -31,8 +31,8 @@ $(document).ready(function() {
 	//shuffle the deck
 	
 	
-	var cards_player_1 = [];
-	var cards_player_2 = [];
+	var you = [];
+	var opponent = [];
 	//divide out the cards into the two arrays
 	
 	
@@ -52,13 +52,13 @@ $(document).ready(function() {
 	
 	function advance() {
 		//take the top two cards and display them
-		if (cards_player_1.length) {
-			var card_1 = cards_player_1[0];
-			var card_2 = cards_player_2[0];
+		if (you.length) {
+			var card_1 = opponent[0];
+			var card_2 = opponent[0];
 			$("#opp-card").html(convert_value_to_string(card_1.number)+" "+card_1.suit);
-			$("#opp-card-count").html(cards_player_1.length);
+			$("#opp-card-count").html(you.length);
 			$("#my-card").html(convert_value_to_string(card_2.number)+" "+card_2.suit);
-			$("#my-card-count").html(cards_player_2.length);
+			$("#my-card-count").html(opponent.length);
 			
 		}
 	}
